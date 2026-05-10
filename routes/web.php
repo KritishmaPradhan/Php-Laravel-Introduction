@@ -13,3 +13,4 @@ Route::post('/formdata', function () {
 
 Route::get('/', [UserController::class, 'index']);
 Route::get('/about', [UserController::class, 'about']);
+Route::get('/users', [UserController::class, 'users']);

@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Form Data</title>
+        <title>Home Page</title>
 
         <!-- Styles / Scripts -->
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
@@ -13,23 +13,24 @@
             </style>
         @endif
     </head>
-<body>
-<x-nav-bar />
-<?php 
-$nameErr = $emailErr = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["name"])) {
-    $nameErr = "Name is required";
-  } else {
-    echo "Welcome <br>" . $_POST["name"]. "<br><br>";
-  }
-    if (empty($_POST["email"])) {
-    $emailErr = "Email is required";
-  } else {
-    echo "Your email address is: " . $_POST["email"];
-  }
-}
-?>
-</body>
+    <body>
+        <div class = "display-dbdata">
+            <h1>Users Data</h1>
+            <table border="1" cellpadding="10" cellspacing="0" class="main-table">
+                <tr class="table-header">
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+            
+                @foreach($users as $user)
+                <tr>
+                    <td>{{$user->id}}</td>
+                    <td>{{$user->name}}</td>
+                    <td>{{$user->email}}</td>
+                </tr>
+                @endforeach
+            </table>
+        </div>
+    </body>
 </html>

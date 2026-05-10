@@ -67,3 +67,42 @@ body{
     font-size: 19px;
     margin-top: 90px;
 }
+.nav-bar{
+    background: linear-gradient(to right, #4facfe8e, #00f1fe7a);
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 0;
+}
+.nav-bar nav{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.nav-bar nav span{
+    cursor: pointer;
+    font-weight: bold;
+    color: #0b0b0b;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+.display-dbdata{
+    background-color: #f4f6f729;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: 20px auto;
+}
+.table-header{
+    font-weight: bold;
+    color: #0b0b0b;
+    font-family: Georgia, serif;
+    font-size: 19px;
+    text-align: center;
+    background: linear-gradient(to right, #4facfe8e, #0131337a);
+}
+.main-table{
+    width: 100%;
+    border-collapse: collapse;
+}

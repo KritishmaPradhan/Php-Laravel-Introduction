@@ -20,6 +20,7 @@
         @endif
     </head>
     <body>
+        <x-nav-bar />
         <div class = "home-content">
             <h1><b>My first PHP page</b></h1>
             <form class = "form-container" action="/formdata" method="post">

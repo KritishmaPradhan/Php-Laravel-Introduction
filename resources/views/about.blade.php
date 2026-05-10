@@ -14,6 +14,7 @@
         @endif
     </head>
 <body>
+    <x-nav-bar />
     <div class="about-header">
         <h1>Welcome to My About Page {{$name}}</h1>
         <p>This is the about page of my website. Here you can find information about me and my work.</p>
