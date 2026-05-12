@@ -17,9 +17,10 @@ class UserController extends Controller
         $message = ["Hello, welcome to my about page!", "I am a web developer with a passion for creating beautiful and functional websites.", "Feel free to explore and learn more about what I do!"];
         return view('about', ['name' => $name, 'message' => $message]);
     }
-    function users()
+    function model_student_data()
     {
         $users = DB::select('select * from users');
-        return view('displaydbdata', ['users' => $users]);
+        $students = \App\Models\StudentDetail::all();
+        return view('displaydbdata', ['students' => $students], ['users' => $users]);
     }
 }

@@ -106,3 +106,10 @@ body{
     width: 100%;
     border-collapse: collapse;
 }
+#students-table{
+    background: linear-gradient(to right, #66e3ff23, #3ba6aabd);
+}
+#students-table .table-header{
+    background: linear-gradient(to right, #84cee5dc, #2b03686b);
+
+}

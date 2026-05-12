@@ -14,7 +14,7 @@
         @endif
     </head>
     <body>
-        <div class = "display-dbdata">
+        <div class = "display-dbdata" id = "users-table">
             <h1>Users Data</h1>
             <table border="1" cellpadding="10" cellspacing="0" class="main-table">
                 <tr class="table-header">
@@ -28,6 +28,29 @@
                     <td>{{$user->id}}</td>
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
+                </tr>
+                @endforeach
+            </table>
+        </div>
+
+        <div class = "display-dbdata" id = "students-table">
+            <h1>Students Data</h1>
+            <table border="1" cellpadding="10" cellspacing="0" class="main-table">
+                <tr class="table-header">
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Faculty</th>
+                    <th>College</th>
+                </tr>
+            
+                @foreach($students as $student)
+                <tr>
+                    <td>{{$student->id}}</td>
+                    <td>{{$student->name}}</td>
+                    <td>{{$student->address}}</td>
+                    <td>{{$student->faculty}}</td>
+                    <td>{{$student->college}}</td>
                 </tr>
                 @endforeach
             </table>
