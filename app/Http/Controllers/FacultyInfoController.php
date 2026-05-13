@@ -12,7 +12,8 @@ class FacultyInfoController extends Controller
      */
     public function index()
     {
-        //
+        $facultyInfos = FacultyInfo::all();
+        return view('category.index', ['facultyInfos' => $facultyInfos]);
     }
 
     /**
@@ -20,7 +21,7 @@ class FacultyInfoController extends Controller
      */
     public function create()
     {
-        //
+        return view('category.create');
     }
 
     /**
@@ -28,7 +29,16 @@ class FacultyInfoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'department' => 'required',
+            'email' => 'required|email',
+        ]);
+
+        FacultyInfo::create($request->all());
+
+        return redirect()->route('category.index')
+                         ->with('success', 'Faculty information created successfully.');
     }
 
     /**
@@ -36,7 +46,7 @@ class FacultyInfoController extends Controller
      */
     public function show(FacultyInfo $facultyInfo)
     {
-        //
+        return view('category.show', compact('facultyInfo'));
     }
 
     /**
@@ -44,7 +54,7 @@ class FacultyInfoController extends Controller
      */
     public function edit(FacultyInfo $facultyInfo)
     {
-        //
+        return view('category.edit', compact('facultyInfo'));
     }
 
     /**
@@ -52,7 +62,16 @@ class FacultyInfoController extends Controller
      */
     public function update(Request $request, FacultyInfo $facultyInfo)
     {
-        //
+      $request->validate([
+            'name' => 'required',
+            'department' => 'required',
+            'email' => 'required|email',
+        ]);
+
+        $facultyInfo->update($request->all());
+
+        return redirect()->route('category.index')
+                         ->with('success', 'Faculty information updated successfully.');  
     }
 
     /**
@@ -60,6 +79,9 @@ class FacultyInfoController extends Controller
      */
     public function destroy(FacultyInfo $facultyInfo)
     {
-        //
+        $facultyInfo->delete();
+
+        return redirect()->route('category.index')
+                         ->with('success', 'Faculty information deleted successfully.');
     }
 }

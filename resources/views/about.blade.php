@@ -16,17 +16,17 @@
 <body>
     <x-nav-bar />
     <div class="about-header">
-        <h1>Welcome to My About Page {{$name}}</h1>
-        <p>This is the about page of my website. Here you can find information about me and my work.</p>
-        <p>Feel free to explore and learn more about what I do!</p>
-        <a href="/">Home -></a>
+        <h1>Welcome to IIM Data Management System <span style="background: linear-gradient(to right, #042388, #127ba8);  -webkit-background-clip: text; -webkit-text-fill-color: transparent;" >{{$name}}</span></h1>
+        <p>Explore in the world of data management and discover how we can help you with your data needs.<br> Whether you're looking for insights, solutions, or just want to learn more about data management, you've come to the right place.<br><br><br></p>
     </div>
 
     <div class="about-info">
-        <h2>My Hobbies</h2>
-            @foreach($message as $m)
-                <p>{{ $m }}</p>
-            @endforeach
+        <h2>Our Services</h2>
+                @foreach($message as $m)
+                    <div class = "about-services">
+                        <p>{{ $m }}</p>
+                    </div>
+                @endforeach
     </div>
 </body>
 </html>

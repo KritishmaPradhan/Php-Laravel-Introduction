@@ -1,8 +1,14 @@
-<html>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Home Page</title>
+
+        <title>Contact</title>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
 
         <!-- Styles / Scripts -->
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
@@ -13,33 +19,16 @@
             </style>
         @endif
     </head>
-<body class="relative min-h-screen overflow-hidden" style="background: linear-gradient(0deg, #ae3ef3be, #6fc9fdc2); position: relative;">
-    <!-- Circuit Board Background with Low Opacity -->
-    <div style="
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('/images/circuit-board.jpg');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        opacity: 0.3;
-        z-index: -1;
-        pointer-events: none;
-    "></div>
-
-    <x-nav-bar />
-    <div class="home-content relative" style="z-index: 10;">
-        <h1>IIM Data Management System </h1>
-        <p>Explore our services and personalize your experience.</p>
-        <br><br><br>
-        <div class="links">
-            <a href="/contact">Contact</a>
-            <a href="/about">About</a>
+    <body>
+        <x-nav-bar />
+        <div class = "home-content">
+            <h1><b>Contact Us</b></h1>
+            <form class = "form-container" action="/formdata" method="post">
+                Name: <input class = "input-box" type="text" name="name"><br>
+                E-mail: <input class = "input-box" type="text" name="email"><br>
+                Message: <input class = "input-box" type="text" name="message"><br>
+                <input  class = "submit-btn" type="submit">
+            </form>
         </div>
-    </div>
-</body>
-</html>
+    </body>
+</html> 

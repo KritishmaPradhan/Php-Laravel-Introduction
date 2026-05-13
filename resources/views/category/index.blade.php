@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Home Page</title>
+        <title>FacultyInfo Management</title>
 
         <!-- Styles / Scripts -->
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
@@ -13,33 +13,42 @@
             </style>
         @endif
     </head>
-<body class="relative min-h-screen overflow-hidden" style="background: linear-gradient(0deg, #ae3ef3be, #6fc9fdc2); position: relative;">
-    <!-- Circuit Board Background with Low Opacity -->
-    <div style="
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('/images/circuit-board.jpg');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        opacity: 0.3;
-        z-index: -1;
-        pointer-events: none;
-    "></div>
-
+<body>
     <x-nav-bar />
-    <div class="home-content relative" style="z-index: 10;">
-        <h1>IIM Data Management System </h1>
-        <p>Explore our services and personalize your experience.</p>
+    <div class="home-content faculty-info-management-system">
+        <h1>Welcome to Faculty Info Management System</h1>
+        <p>General Dashboard - Information View</p>
         <br><br><br>
         <div class="links">
-            <a href="/contact">Contact</a>
-            <a href="/about">About</a>
+            <a href="{{ url('category/create')}}" >Insert Info</a>
         </div>
     </div>
+    <div class = "display-dbdata">
+        <h1>Faculty Data</h1>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <tr class="table-header">
+                <th>Id</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+            @foreach ($facultyInfos as $facultyInfo)
+            <tr>
+                <td>{{ $facultyInfo->id }}</td>
+                <td>{{ $facultyInfo->name }}</td>
+                <td>{{ $facultyInfo->department }}</td>
+                <td>{{ $facultyInfo->email }}</td>
+                <td>
+                    <a class = "edit-btn" style="text-decoration: none;" href="{{ route('category.edit', $facultyInfo->id) }}">Edit</a>
+                    <a class = "show-btn" style="text-decoration: none;" href="{{ route('category.show', $facultyInfo->id) }}">Show</a>
+                    <form action="{{ route('category.destroy', $facultyInfo->id) }}" method="POST" style="display: inline-block;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="delete-btn" style="background-color: transparent; border:none; color: red; cursor: pointer;">Delete</button>
+                </td>
+            </tr>
+            @endforeach
+        </table>
 </body>
 </html>

@@ -1,8 +1,14 @@
-<html>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Home Page</title>
+
+        <title>{{ config('app.name', 'Laravel') }}</title>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
 
         <!-- Styles / Scripts -->
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
@@ -13,33 +19,32 @@
             </style>
         @endif
     </head>
-<body class="relative min-h-screen overflow-hidden" style="background: linear-gradient(0deg, #ae3ef3be, #6fc9fdc2); position: relative;">
-    <!-- Circuit Board Background with Low Opacity -->
-    <div style="
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('/images/circuit-board.jpg');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        opacity: 0.3;
-        z-index: -1;
-        pointer-events: none;
-    "></div>
-
-    <x-nav-bar />
-    <div class="home-content relative" style="z-index: 10;">
-        <h1>IIM Data Management System </h1>
-        <p>Explore our services and personalize your experience.</p>
-        <br><br><br>
-        <div class="links">
-            <a href="/contact">Contact</a>
-            <a href="/about">About</a>
+    <body>
+        <x-nav-bar />
+        <div class="home-content">
+            <form class="form-container faculty-content-form" action="{{route('category.update', $facultyInfo)}}" method="POST">
+                @csrf
+                @method('PUT')
+                <h1 class = "form-title">Update Category</h1>
+                <div class = "form-group faculty-form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" value="{{$facultyInfo->name}}" required>
+                    @error('name')
+                        <p class = "error-message">{{$message}}</p>
+                    @enderror
+                    <label for="department">Department</label>
+                    <input type="text" name="department" id="department" value="{{$facultyInfo->department}}" required>
+                    @error('department')
+                        <p class = "error-message">{{$message}}</p>
+                    @enderror
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" value="{{$facultyInfo->email}}" required>
+                    @error('email')
+                        <p class = "error-message">{{$message}}</p>
+                    @enderror
+                </div>
+                <button type="submit" class = "submit-btn">Update</button>
+            </form>
         </div>
-    </div>
-</body>
-</html>
+    </body>
+</html> 

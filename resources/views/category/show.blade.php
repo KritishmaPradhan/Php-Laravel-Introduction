@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>{{ config('app.name', 'Laravel') }}</title>
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
+        <title>Home Page</title>
 
         <!-- Styles / Scripts -->
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
@@ -20,33 +14,43 @@
         @endif
     </head>
     <body>
-        <x-nav-bar />
-        <div class = "home-content">
-            <h1><b>My first PHP page</b></h1>
-            <form class = "form-container" action="/formdata" method="post">
-                Name: <input class = "input-box" type="text" name="name"><br>
-                E-mail: <input class = "input-box" type="text" name="email"><br>
-                <input  class = "submit-btn" type="submit">
-            </form>
-            <?php
-                $name = "Kritishma";
-                echo '<br><br><br>Hello World! <br>';
-                echo "My name is $name <br>";
-                echo '<p>Study PHP at ' . $name . '</p>';          // if single quote variable be added like .$v.
-                echo "<h2>PHP is Fun!</h2>";
-                echo "This ", "string ", "was ", "made ", "with multiple parameters.";
+        <a href="/">Home -></a>
+        <div class = "display-dbdata" id = "users-table">
+            <h1>Faculty Information</h1>
+            <table border="1" cellpadding="10" cellspacing="0" class="main-table">
+                <tr class="table-header">
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Email</th>
+                </tr>
+            
+                <tr>
+                    <td>{{$facultyInfo->id}}</td>
+                    <td>{{$facultyInfo->name}}</td>
+                    <td>{{$facultyInfo->department}}</td>
+                    <td>{{$facultyInfo->email}}</td>
+                </tr>
+            </table>
+            <div class="faculty-alternative-display">
+                <h2>Faculty Information (Alternative Display)</h2>
+                <div class="faculty-info">
+                    ID:
+                    {{$facultyInfo->id}}
+                </div>
+                <div class="faculty-info">
+                    Name:
+                    {{$facultyInfo->name}}  
+                </div>
+                <div class="faculty-info">
+                    Department:
+                    {{$facultyInfo->department}}
+                </div>
+                <div class="faculty-info">
+                    Email:
+                    {{$facultyInfo->email}}
+                </div>
+            </div>
 
-                function myTest() {
-                  static $x = 0; // static scope
-                  echo "$x <br>";
-                  $x++;
-                }
-
-                myTest();
-                myTest();
-                myTest();
-                ?>
-                <a href="/">Home -></a>
-        </div>
     </body>
-</html> 
+</html>

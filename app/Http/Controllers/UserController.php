@@ -14,7 +14,7 @@ class UserController extends Controller
     function about()
     {
         $name = "Kritishma Pradhan";
-        $message = ["Hello, welcome to my about page!", "I am a web developer with a passion for creating beautiful and functional websites.", "Feel free to explore and learn more about what I do!"];
+        $message = ["Create Operation", "Read Operation", "Update Operation", "Delete Operation"];
         return view('about', ['name' => $name, 'message' => $message]);
     }
     function model_student_data()

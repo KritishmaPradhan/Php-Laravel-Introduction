@@ -56,13 +56,23 @@ body{
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    width: 80%;
     margin: 20px auto;
     text-align: center;
 }
+.about-services{
+    background: linear-gradient(127deg, #ae3ef329, #6fc9fd3f);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    margin: 20px auto;
+    display: inline-block;
+    font-size: 22px;
+}
 .home-content{
     text-align: center;
-    color: #0b0b0b;
+    color: #000000;
     font-family: Georgia, serif;
     font-size: 19px;
     margin-top: 90px;
@@ -111,5 +121,63 @@ body{
 }
 #students-table .table-header{
     background: linear-gradient(to right, #84cee5dc, #2b03686b);
+
+}
+
+/* Faculty Info Management System */
+.faculty-info-management-system{
+    background: linear-gradient(to right, #89e8d63a, #38ddcf);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: 20px auto;                 
+}
+.faculty-content-form{
+    background: linear-gradient(0deg, #89e8d63a, #38ddcf);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    margin: 0 auto;            
+}
+input[type="text"], input[type="email"]{
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 8px;    
+}
+.edit-btn{
+    background: linear-gradient(to right, #f0ec16, #ecda55);
+    color: black;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;    
+}
+.show-btn{
+    /* background: linear-gradient(to right, #4facfe, #00f2fe); */
+    border: 2px solid #e1a203;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;    
+}
+.faculty-alternative-display{
+    background: linear-gradient(to right, #89e8d63a, #38ddcf4d);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: 20px auto;                 
+}
+.faculty-info{
+    background: linear-gradient(0deg, #b8ede4f1, #f3fcfb);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin: 20px auto;
 
 }

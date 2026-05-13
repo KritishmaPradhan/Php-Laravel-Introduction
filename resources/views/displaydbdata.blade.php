@@ -14,6 +14,8 @@
         @endif
     </head>
     <body>
+        <x-nav-bar />
+        <a href="/">Home -></a>
         <div class = "display-dbdata" id = "users-table">
             <h1>Users Data</h1>
             <table border="1" cellpadding="10" cellspacing="0" class="main-table">
