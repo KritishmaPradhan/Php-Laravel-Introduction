@@ -17,6 +17,10 @@ class UserController extends Controller
         $message = ["Create Operation", "Read Operation", "Update Operation", "Delete Operation"];
         return view('about', ['name' => $name, 'message' => $message]);
     }
+    function contact()
+    {
+        return view('contact');
+    }
     function model_student_data()
     {
         $users = DB::select('select * from users');

@@ -22,14 +22,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
     $nameErr = "Name is required";
   } else {
-    echo "Welcome <br>" . $_POST["name"]. "<br><br>";
+    echo "<br>" . $_POST["name"]. "  your message was sent.<br><br>";
   }
     if (empty($_POST["email"])) {
     $emailErr = "Email is required";
   } else {
-    echo "Your email address is: " . $_POST["email"];
+    echo "We will contact you at " . $_POST["email"];
   }
 }
 ?>
+<a href="{{ url('/') }}" ><br><br> <br> Go back to home page</a>
 </body>
 </html>
