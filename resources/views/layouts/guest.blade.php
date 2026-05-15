@@ -17,7 +17,6 @@
         <div class="auth-container">
             <div class="auth-card">
                 <div class="auth-header">
-                    <div class="auth-logo">L</div>
                 </div>
                 {{ $slot }}
             </div>

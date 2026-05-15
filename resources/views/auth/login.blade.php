@@ -1,10 +1,11 @@
 <x-guest-layout>
+<a href = "/" style="text-decoration: none;">🏠</a>
+
 @if (session('status'))
     <div class="auth-status success">
         {{ session('status') }}
     </div>
 @endif
-
 <div class="auth-header">
     <h1 class="auth-title">{{ __('Welcome Back') }}</h1>
     <p class="auth-subtitle">{{ __('Sign in to your account') }}</p>

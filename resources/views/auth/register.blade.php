@@ -1,4 +1,6 @@
 <x-guest-layout>
+<a href = "/" style="text-decoration: none;">🏠</a>
+
 <div class="auth-header">
     <h1 class="auth-title">{{ __('Create Account') }}</h1>
     <p class="auth-subtitle">{{ __('Join us today and get started') }}</p>

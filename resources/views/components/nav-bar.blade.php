@@ -4,5 +4,7 @@
         <a href = "/about" style="text-decoration: none;"><span>About</span></a>
         <a href = "/modeldatastudent" style="text-decoration: none;"><span>Data View</span></a>
         <a href = "/category" style="text-decoration: none;"><span>Faculty Management System</span></a>
+        <a href = "/register" style="text-decoration: none;"><span>Sign Up</span></a>
+        <a href = "/login" style="text-decoration: none;"><span>Login</span></a>
     </nav>
 </div>
